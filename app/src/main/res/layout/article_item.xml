@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="4dp"
+    android:background="@drawable/bg_sharp_card"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp">
+
+        <ImageView
+            android:id="@+id/highlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:contentDescription="@string/empty" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/contentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_toStartOf="@+id/nextButton"
+        android:layout_toEndOf="@+id/header"
+        android:orientation="vertical"
+        android:paddingStart="12dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="4dp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="#1a1a1a"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/subTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="#7F7F7F"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/contentContainer"
+        android:background="@color/demo_dark_transparent" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_toStartOf="@+id/nextButton"
+        android:layout_marginBottom="12dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="start|center"
+            android:layout_marginEnd="8dp"
+            android:layout_toStartOf="@+id/publishedDate"
+            android:ellipsize="end"
+            android:gravity="start|center"
+            android:maxLines="1"
+            android:paddingTop="2dp"
+            android:textAllCaps="true"
+            android:textColor="#AAA9A9"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/publishedDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:drawableStart="@drawable/ic_today_black_24dp"
+            android:textColor="#AAA9A9" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="24dp"
+        android:contentDescription="@string/empty"
+        android:padding="8dp"
+        android:src="@drawable/ic_keyboard_arrow_right_black_24dp" />
+</RelativeLayout>
