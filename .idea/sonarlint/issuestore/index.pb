@@ -21,3 +21,7 @@ Vapp/src/main/java/com/tetra/newyorktimes/popularArticle/view/PopularArticleActi
 build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
 ‚
 Rapp/src/main/java/com/tetra/newyorktimes/popularArticle/adapter/ArticlesAdapter.kt,4/2/42b874d5942e84f08b2c92965c921d42cd9e6255
+s
+Capp/src/test/java/com/tetra/newyorktimes/PopularArticleModelTest.kt,f/5/f5a4954b6ef0adadcb1d8209fb43e6067e52e911
+w
+Gapp/src/test/java/com/tetra/newyorktimes/PopularArticleViewModelTest.kt,8/e/8e02ab0c505e03fe9e1fbb36e5ab808caed18969

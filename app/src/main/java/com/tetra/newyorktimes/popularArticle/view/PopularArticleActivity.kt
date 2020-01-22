@@ -14,9 +14,9 @@ import com.google.gson.Gson
 import com.tetra.newyorktimes.R
 import com.tetra.newyorktimes.constants.Constant
 import com.tetra.newyorktimes.popularArticle.adapter.ArticlesAdapter
+import com.tetra.newyorktimes.popularArticle.model.ResultData
 import com.tetra.newyorktimes.popularArticle.viewModel.PopularArticleViewModel
 import com.tetra.newyorktimes.popularArticle.viewModel.helper.PopularArticleJson
-import com.tetra.newyorktimes.popularArticle.viewModel.helper.Result
 import com.tetra.newyorktimes.volley.VolleySingleton
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
@@ -77,7 +77,7 @@ class PopularArticleActivity : AppCompatActivity(), PopularArticleViewModel.Call
     /*
     * Callback received once data separated
     */
-    override fun loadPopularArticles(results: ArrayList<Result>?) {
+    override fun loadPopularArticles(results: ArrayList<ResultData>?) {
         if (results.isNullOrEmpty())
             return
         val articlesAdapter = ArticlesAdapter(this, this, results)

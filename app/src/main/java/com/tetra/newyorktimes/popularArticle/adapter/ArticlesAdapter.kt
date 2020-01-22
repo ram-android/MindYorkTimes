@@ -12,6 +12,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.amulyakhare.textdrawable.TextDrawable
 import com.tetra.newyorktimes.R
+import com.tetra.newyorktimes.popularArticle.model.ResultData
 import com.tetra.newyorktimes.popularArticle.viewModel.helper.Result
 import kotlinx.android.synthetic.main.article_item.view.*
 import java.util.*
@@ -22,7 +23,7 @@ import java.util.*
 class ArticlesAdapter(
     callback: Callback,
     context: Context,
-    private val results: ArrayList<Result>
+    private val results: ArrayList<ResultData>
 ) :
     RecyclerView.Adapter<ArticlesAdapter.ViewHolder>() {
     private var callback: Callback? = null
@@ -55,19 +56,19 @@ class ArticlesAdapter(
         val result = results[position]
         holder.title.text = result.title
         holder.subTitle.text = result.abstract
-        holder.description.text = result.byline
-        holder.publishedDate.text = "  " + result.published_date
+        holder.description.text = result.byLine
+        holder.publishedDate.text = "  " + result.publishedDate
 
         val drawable = TextDrawable.builder()
             .beginConfig()
             .width(255)
             .height(255)
             .endConfig()
-            .buildRound(result.title!!.substring(0, 2).toUpperCase(), generateRandomColor())
+            .buildRound(result.title.substring(0, 2).toUpperCase(), generateRandomColor())
         holder.highlight.setImageDrawable(drawable)
 
         holder.rootContainer.setOnClickListener {
-            result.url?.let {
+            result.url.let {
                 callback?.itemClicked(it)
             }
         }

@@ -1,12 +1,10 @@
 package com.tetra.newyorktimes.popularArticle.model
 
 import com.tetra.newyorktimes.popularArticle.viewModel.helper.PopularArticleJson
-import com.tetra.newyorktimes.popularArticle.viewModel.helper.Result
-import java.util.*
 
 class PopularArticleModel() {
 
-    var results: ArrayList<Result>? = null
+    var results: ArrayList<ResultData> = ArrayList()
     private var json: PopularArticleJson? = null
 
     constructor(json: PopularArticleJson) : this() {
@@ -19,8 +17,12 @@ class PopularArticleModel() {
             this!!.results?.let {
                 if (it.size <= 0)
                     return@let
-                this@PopularArticleModel.results = it
+                for (result in it) {
+                    this@PopularArticleModel.results.add(ResultData(result.title!!, result.abstract!!, result.byline!!, result.published_date!!, result.url!!))
+                }
             }
         }
     }
 }
+
+data class ResultData (val title: String, val abstract: String, val byLine:String, val publishedDate: String, val url:String)

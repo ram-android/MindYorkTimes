@@ -1,12 +1,11 @@
 package com.tetra.newyorktimes.popularArticle.viewModel
 
 import com.tetra.newyorktimes.popularArticle.model.PopularArticleModel
+import com.tetra.newyorktimes.popularArticle.model.ResultData
 import com.tetra.newyorktimes.popularArticle.viewModel.helper.PopularArticleJson
-import com.tetra.newyorktimes.popularArticle.viewModel.helper.Result
 import java.util.ArrayList
 
 class PopularArticleViewModel() {
-
     private var callback: Callback? = null
     private lateinit var model: PopularArticleModel
 
@@ -20,6 +19,6 @@ class PopularArticleViewModel() {
     }
 
     interface Callback {
-        fun loadPopularArticles(results: ArrayList<Result>?)
+        fun loadPopularArticles(results: ArrayList<ResultData>?)
     }
 }
