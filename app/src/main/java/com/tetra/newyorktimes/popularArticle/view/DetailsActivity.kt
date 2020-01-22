@@ -1,6 +1,7 @@
 package com.tetra.newyorktimes.popularArticle.view
 
 import android.app.Activity
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
@@ -46,9 +47,13 @@ class DetailsActivity : AppCompatActivity(){
             Toast.makeText(activity, "Got Error! $error", Toast.LENGTH_SHORT).show()
         }
 
+        override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
+            super.onPageStarted(view, url, favicon)
+            progressBar.visibility = View.GONE
+        }
+        
         override fun onPageFinished(view: WebView?, url: String?) {
             super.onPageFinished(view, url)
-            progressBar.visibility = View.GONE
             Handler().postDelayed({
                 webView.visibility = View.VISIBLE
             }, 1000)
